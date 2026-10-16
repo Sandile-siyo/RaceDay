@@ -30,7 +30,7 @@ Categories
 Stores event categories and age groups.
 
 Registrations
-Stores participant registrations for events
+Stores participant registrations for events.
 
 Results
 Stores race performance results
