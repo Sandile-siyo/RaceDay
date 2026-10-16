@@ -33,7 +33,7 @@ Registrations
 Stores participant registrations for events
 
 Results
-Stores race performance results.
+Stores race performance results
 
 Weather
 Stores weather forecast information for events.
