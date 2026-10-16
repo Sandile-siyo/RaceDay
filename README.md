@@ -39,7 +39,7 @@ Weather
 Stores weather forecast information for events.
 
 Routes
-Stores race route information.
+Stores race route information
 
 Main Features
 Authentication
