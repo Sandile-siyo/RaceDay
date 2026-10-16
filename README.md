@@ -21,7 +21,7 @@ Database Structure
 The database contains the following entities:
 
 Users
-Stores participant and organiser information.
+Stores participant and organiser information
 
 Events
 Stores race event details.
