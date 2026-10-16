@@ -184,4 +184,4 @@ RaceDay
     ├── EventTests
     └── RegistrationTests
 Conclusion
-The RaceDay API successfully demonstrates the implementation of a RESTful Web API using ASP.NET Core, Entity Framework Core, and SQL Server. The project includes secure user authentication, event management functionality, data validation, unit testing, and comprehensive API documentation using Swagger
+The RaceDay API successfully demonstrates the implementation of a RESTful Web API using ASP.NET Core, Entity Framework Core, and SQL Server. The project includes secure user authentication, event management functionality, data validation, unit testing, and comprehensive API documentation using Swagger.
