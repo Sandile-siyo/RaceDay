@@ -135,7 +135,7 @@ Connection String:
 }
 Running the Application
 Step 1
-Open the solution in Visual Studio 2022.
+Open the solution in Visual Studio 2022
 
 Step 2
 Restore NuGet Packages.
