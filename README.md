@@ -24,7 +24,7 @@ Users
 Stores participant and organiser information
 
 Events
-Stores race event details.
+Stores race event details
 
 Categories
 Stores event categories and age groups
