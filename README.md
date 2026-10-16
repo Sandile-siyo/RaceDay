@@ -1,7 +1,7 @@
 # RaceDay
 RaceDay API
 Student Information
-Name* Sandile Siyo
+Name Sandile Siyo
 Student Number: ST10476405
 
 Project Overview
