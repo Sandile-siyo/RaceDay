@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace RaceDay.Models
-{
+{//start of the namespace
     public class User
-    {
+    {//start of the class
         public int UserId { get; set; }
 
         [Required]
@@ -21,5 +21,5 @@ namespace RaceDay.Models
 
         [Required]
         public string Role { get; set; } = string.Empty;
-    }
-}
+    }//end of the class
+}//end of the namespace
