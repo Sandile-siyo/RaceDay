@@ -149,7 +149,7 @@ Run the application:
 
 F5
 Step 5
-Swagger will open automatically.
+Swagger will open automatically
 
 Project Structure
 RaceDay
