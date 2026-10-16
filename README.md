@@ -27,7 +27,7 @@ Events
 Stores race event details.
 
 Categories
-Stores event categories and age groups
+Stores event categories and age groups.
 
 Registrations
 Stores participant registrations for events
