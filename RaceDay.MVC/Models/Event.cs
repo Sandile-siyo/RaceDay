@@ -23,5 +23,8 @@
 
         // Event Type
         public string EventType { get; set; } = string.Empty;
+
+        // Azure Blob Storage image URL
+        public string? ImageUrl { get; set; }
     }
 }

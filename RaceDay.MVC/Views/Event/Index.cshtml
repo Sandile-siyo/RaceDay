@@ -1,82 +1,258 @@
 ﻿@model List<RaceDay.MVC.Models.Event>
 
 @{
-    ViewData["Title"] = "Event Management";
+    ViewData["Title"] = "Race Events";
 }
 
-<!-- Event Management Heading -->
-<h1>Event Management</h1>
+<div class="container py-4">
 
-<!-- Page Description -->
-<p>
-    This page displays all race events retrieved from the API.
-</p>
+    <!-- Page Heading -->
+    <div class="d-flex justify-content-between
+                align-items-center mb-4">
 
-<!-- Navigate to Create Event Page -->
-<a asp-controller="Event"
-   asp-action="Create"
-   class="btn btn-primary">
-    Create New Event
-</a>
+        <div>
 
-<hr />
+            <h1 class="display-6 fw-bold text-primary">
+                🏁 Race Events
+            </h1>
 
-<!-- Event Table -->
-<table class="table table-bordered">
+            <p class="text-muted mb-0">
+                View and manage RaceDay events.
+            </p>
 
-    <thead>
-        <tr>
-            <th>Event Name</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Distance</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
+        </div>
 
-    <tbody>
 
-        <!-- Check if events exist -->
-        @if (Model != null && Model.Any())
-        {
+        <!-- Create Event Button -->
+        <a asp-controller="Event"
+           asp-action="Create"
+           class="btn btn-primary btn-lg">
+
+            + Create New Event
+
+        </a>
+
+    </div>
+
+
+    <!-- Check Whether Events Exist -->
+    @if (Model != null && Model.Any())
+    {
+        <div class="row g-4">
+
             @foreach (var raceEvent in Model)
             {
-                <tr>
-                    <td>@raceEvent.EventName</td>
-                    <td>@raceEvent.Location</td>
-                    <td>@raceEvent.EventDate.ToShortDateString()</td>
-                    <td>@raceEvent.Distance km</td>
+                <div class="col-lg-4 col-md-6">
 
-                    <td>
-                        <!-- Edit Event Button -->
-                        <a asp-controller="Event"
-                           asp-action="Edit"
-                           asp-route-id="@raceEvent.EventId"
-                           class="btn btn-warning btn-sm">
-                            Edit
-                        </a>
+                    <div class="card h-100 shadow-sm border-0">
 
-                        <!-- Delete Event Button -->
-                        <a asp-controller="Event"
-                           asp-action="Delete"
-                           asp-route-id="@raceEvent.EventId"
-                           class="btn btn-danger btn-sm">
-                            Delete
-                        </a>
-                    </td>
-                </tr>
+                        <!-- ===================================== -->
+                        <!-- Event Image -->
+                        <!-- ===================================== -->
+
+                        <div class="position-relative bg-light"
+                             style="height: 220px;">
+
+                            <!-- RaceDay Placeholder -->
+                            <div class="d-flex
+                                                align-items-center
+                                                justify-content-center
+                                                w-100 h-100">
+
+                                <div class="text-center">
+
+                                    <div class="display-4">
+                                        🏃
+                                    </div>
+
+                                    <div class="text-muted">
+                                        RaceDay Event
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            @if (!string.IsNullOrWhiteSpace(
+                                                raceEvent.ImageUrl))
+                            {
+                                <!--
+                                    Display the Azure event image.
+
+                                    If the browser cannot access the
+                                    Azure image, hide the broken image
+                                    and leave the RaceDay placeholder.
+                                -->
+
+                                <img src="@raceEvent.ImageUrl"
+                                     alt="@raceEvent.EventName"
+                                     class="position-absolute
+                                                        top-0
+                                                        start-0
+                                                        w-100
+                                                        h-100"
+                                     style="object-fit: cover;"
+                                     onerror="this.style.display='none';" />
+                            }
+
+                        </div>
+
+
+                        <!-- ===================================== -->
+                        <!-- Event Information -->
+                        <!-- ===================================== -->
+
+                        <div class="card-body">
+
+                            <!-- Event Name -->
+                            <h4 class="card-title
+                                               fw-bold
+                                               text-primary">
+
+                                @raceEvent.EventName
+
+                            </h4>
+
+
+                            <!-- Location -->
+                            <div class="mb-2">
+
+                                <strong>
+                                    📍 Location:
+                                </strong>
+
+                                @raceEvent.Location
+
+                            </div>
+
+
+                            <!-- Date -->
+                            <div class="mb-2">
+
+                                <strong>
+                                    📅 Date:
+                                </strong>
+
+                                @raceEvent.EventDate.ToShortDateString()
+
+                            </div>
+
+
+                            <!-- Distance -->
+                            <div class="mb-2">
+
+                                <strong>
+                                    🏃 Distance:
+                                </strong>
+
+                                @raceEvent.Distance km
+
+                            </div>
+
+
+                            <!-- Event Type -->
+                            <div class="mb-3">
+
+                                <strong>
+                                    🏁 Type:
+                                </strong>
+
+                                @raceEvent.EventType
+
+                            </div>
+
+
+                            <!-- Event Description -->
+                            @if (!string.IsNullOrWhiteSpace(
+                                                raceEvent.EventDescription))
+                            {
+                                <p class="card-text text-muted">
+
+                                    @raceEvent.EventDescription
+
+                                </p>
+                            }
+
+                        </div>
+
+
+                        <!-- ===================================== -->
+                        <!-- Event Actions -->
+                        <!-- ===================================== -->
+
+                        <div class="card-footer
+                                            bg-white
+                                            border-0
+                                            pb-4">
+
+                            <div class="d-flex gap-2">
+
+                                <!-- Edit Event -->
+                                <a asp-controller="Event"
+                                   asp-action="Edit"
+                                   asp-route-id="@raceEvent.EventId"
+                                   class="btn
+                                                  btn-outline-primary
+                                                  flex-fill">
+
+                                    ✏️ Edit
+
+                                </a>
+
+
+                                <!-- Delete Event -->
+                                <a asp-controller="Event"
+                                   asp-action="Delete"
+                                   asp-route-id="@raceEvent.EventId"
+                                   class="btn
+                                                  btn-outline-danger
+                                                  flex-fill">
+
+                                    🗑 Delete
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
             }
-        }
-        else
-        {
-            <tr>
-                <td colspan="5">
-                    No events found.
-                </td>
-            </tr>
-        }
 
-    </tbody>
+        </div>
+    }
+    else
+    {
+        <!-- ===================================== -->
+        <!-- No Events -->
+        <!-- ===================================== -->
 
-</table>
+        <div class="text-center py-5">
 
+            <div class="display-3 mb-3">
+                🏁
+            </div>
+
+            <h3>
+                No Events Available
+            </h3>
+
+            <p class="text-muted">
+                No RaceDay events have been created yet.
+            </p>
+
+            <a asp-controller="Event"
+               asp-action="Create"
+               class="btn btn-primary">
+
+                Create First Event
+
+            </a>
+
+        </div>
+    }
+
+</div>

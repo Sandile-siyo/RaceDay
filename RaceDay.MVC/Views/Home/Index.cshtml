@@ -1,8 +1,135 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "RaceDay";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-5">
+
+    <!-- Welcome Section -->
+    <div class="text-center py-5">
+
+        <h1 class="display-3 fw-bold text-primary">
+            🏃 Welcome to RaceDay
+        </h1>
+
+        <p class="lead mt-3">
+            Your complete race event management system.
+        </p>
+
+        <p class="text-muted mb-4">
+            Discover race events, register to participate,
+            track registrations and view race results.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3">
+
+            <a asp-controller="Account"
+               asp-action="Login"
+               class="btn btn-primary btn-lg px-4">
+                Login
+            </a>
+
+            <a asp-controller="Account"
+               asp-action="Register"
+               class="btn btn-outline-primary btn-lg px-4">
+                Register
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Features Section -->
+    <div class="row g-4 mt-4">
+
+        <!-- Events -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        🏁
+                    </div>
+
+                    <h4 class="card-title">
+                        Race Events
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Browse available race events and view
+                        important race information.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Registrations -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        📋
+                    </div>
+
+                    <h4 class="card-title">
+                        Registrations
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Register for events and keep track
+                        of race participation.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Results -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        🏆
+                    </div>
+
+                    <h4 class="card-title">
+                        Race Results
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        View race results, finishing positions
+                        and participant performance.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- System Information -->
+    <div class="text-center mt-5 pt-4 border-top">
+
+        <h5 class="fw-bold">
+            RaceDay Management System
+        </h5>
+
+        <p class="text-muted">
+            Built using ASP.NET Core MVC, Web API and SQL Server.
+        </p>
+
+    </div>
+
 </div>

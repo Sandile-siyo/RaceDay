@@ -1,4 +1,6 @@
-﻿namespace RaceDay.MVC.ViewModels
+﻿using Microsoft.AspNetCore.Http;
+
+namespace RaceDay.MVC.ViewModels
 {
     // ViewModel used when editing an existing event
     public class EditEventViewModel
@@ -23,5 +25,11 @@
 
         // Event Type
         public string EventType { get; set; } = string.Empty;
+
+        // Existing Azure Blob image URL
+        public string? ImageUrl { get; set; }
+
+        // New image selected by the organiser
+        public IFormFile? ImageFile { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace RaceDay.MVC.ViewModels
+﻿using Microsoft.AspNetCore.Http;
+
+namespace RaceDay.MVC.ViewModels
 {
     // ViewModel used when creating a new race event
     public class CreateEventViewModel
@@ -20,5 +22,8 @@
 
         // Event Type
         public string EventType { get; set; } = string.Empty;
+
+        // Image selected by the organiser
+        public IFormFile? ImageFile { get; set; }
     }
 }

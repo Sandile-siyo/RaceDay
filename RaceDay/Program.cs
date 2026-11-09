@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RaceDay.Data;
+using RaceDay.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,11 @@ builder.Services.AddDbContext<RaceDayDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("RaceDayConnection")));
 
+// Register Azure Blob Storage service
+builder.Services.AddScoped<BlobStorageService>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 

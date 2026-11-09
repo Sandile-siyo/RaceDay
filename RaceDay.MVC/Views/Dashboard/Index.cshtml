@@ -1,48 +1,168 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard";
+    ViewData["Title"] = "Organiser Dashboard";
 }
 
-<!-- Dashboard Page Heading -->
-<h1>Organiser Dashboard</h1>
+<div class="container py-4">
 
-<p>Welcome to the RaceDay Management System.</p>
+    <!-- Dashboard Heading -->
+    <div class="text-center mb-5">
 
-<!-- Dashboard Navigation Menu -->
-<div class="list-group">
+        <h1 class="display-5 fw-bold text-primary">
+            🏆 Organiser Dashboard
+        </h1>
 
-    <!-- Manage Events -->
-    <a asp-controller="Event"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        Manage Events
-    </a>
+        <p class="lead text-muted">
+            Welcome to the RaceDay Management Portal.
+        </p>
 
-    <!-- View Registrations -->
-    <a asp-controller="Registration"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        View Registrations
-    </a>
+        <p class="text-muted">
+            Manage race events, registrations and participant results.
+        </p>
 
-    <!-- Manage Results -->
-    <a asp-controller="Result"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        Manage Results
-    </a>
+    </div>
 
-    <!-- Participant Dashboard -->
-    <a asp-controller="Participant"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        Participant Dashboard
-    </a>
 
-    <!-- Logout -->
-    <a asp-controller="Account"
-       asp-action="Logout"
-       class="list-group-item list-group-item-action text-danger">
-        Logout
-    </a>
+    <!-- Dashboard Cards -->
+    <div class="row g-4 justify-content-center">
+
+        <!-- Manage Events -->
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        🏁
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Manage Events
+                    </h4>
+
+                    <p class="text-muted">
+                        Create, view and update RaceDay
+                        events and event information.
+                    </p>
+
+                    <a asp-controller="Event"
+                       asp-action="Index"
+                       class="btn btn-primary w-100">
+
+                        Manage Events
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Registrations -->
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        📋
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Registrations
+                    </h4>
+
+                    <p class="text-muted">
+                        View participant registrations
+                        for RaceDay events.
+                    </p>
+
+                    <a asp-controller="Registration"
+                       asp-action="Index"
+                       class="btn btn-primary w-100">
+
+                        View Registrations
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Manage Results -->
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        🏆
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Manage Results
+                    </h4>
+
+                    <p class="text-muted">
+                        Manage participant race results,
+                        positions and performance.
+                    </p>
+
+                    <a asp-controller="Result"
+                       asp-action="Index"
+                       class="btn btn-primary w-100">
+
+                        Manage Results
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Additional Actions -->
+    <div class="row mt-5">
+
+        <div class="col-md-8 mx-auto">
+
+            <div class="card border-0 bg-light">
+
+                <div class="card-body text-center p-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Account
+                    </h5>
+
+                    <p class="text-muted">
+                        Finished managing RaceDay?
+                    </p>
+
+                    <a asp-controller="Account"
+                       asp-action="Logout"
+                       class="btn btn-outline-danger px-4">
+
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

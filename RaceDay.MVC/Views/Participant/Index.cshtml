@@ -2,49 +2,164 @@
     ViewData["Title"] = "Participant Dashboard";
 }
 
-<!-- Participant Dashboard Heading -->
-<h1>Participant Dashboard</h1>
+<div class="container py-4">
 
-<p>
-    Welcome to the RaceDay Participant Portal.
-</p>
+    <!-- Dashboard Heading -->
+    <div class="text-center mb-5">
 
-<!-- Participant Navigation -->
-<div class="list-group">
+        <h1 class="display-5 fw-bold text-primary">
+            🏃 Participant Dashboard
+        </h1>
 
-    <!-- Browse Events -->
-    <a asp-controller="Event"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        Browse Events
-    </a>
+        <p class="lead text-muted">
+            Welcome to your RaceDay Participant Portal.
+        </p>
 
-    <!-- My Registrations -->
-    <a asp-controller="Registration"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        My Registrations
-    </a>
+        <p class="text-muted">
+            Browse upcoming races, manage your registrations
+            and view your race results.
+        </p>
 
-    <!-- My Results -->
-    <a asp-controller="Result"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        My Results
-    </a>
+    </div>
 
-    <!-- Organiser Dashboard -->
-    <a asp-controller="Dashboard"
-       asp-action="Index"
-       class="list-group-item list-group-item-action">
-        Organiser Dashboard
-    </a>
 
-    <!-- Logout -->
-    <a asp-controller="Account"
-       asp-action="Logout"
-       class="list-group-item list-group-item-action text-danger">
-        Logout
-    </a>
+    <!-- Dashboard Cards -->
+    <div class="row g-4 justify-content-center">
+
+        <!-- Browse Events -->
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        🏁
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Browse Events
+                    </h4>
+
+                    <p class="text-muted">
+                        Explore available RaceDay events
+                        and choose your next race.
+                    </p>
+
+                    <a asp-controller="Event"
+                       asp-action="Index"
+                       class="btn btn-primary w-100">
+
+                        Browse Events
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- My Registrations -->
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        📋
+                    </div>
+
+                    <h4 class="fw-bold">
+                        My Registrations
+                    </h4>
+
+                    <p class="text-muted">
+                        View and manage your current
+                        race registrations.
+                    </p>
+
+                    <a asp-controller="Registration"
+                       asp-action="Index"
+                       class="btn btn-primary w-100">
+
+                        View Registrations
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- My Results -->
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="display-5 mb-3">
+                        🏆
+                    </div>
+
+                    <h4 class="fw-bold">
+                        My Results
+                    </h4>
+
+                    <p class="text-muted">
+                        View your race results,
+                        positions and performance.
+                    </p>
+
+                    <a asp-controller="Result"
+                       asp-action="Index"
+                       class="btn btn-primary w-100">
+
+                        View Results
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Account Actions -->
+    <div class="row mt-5">
+
+        <div class="col-md-8 mx-auto">
+
+            <div class="card border-0 bg-light">
+
+                <div class="card-body text-center p-4">
+
+                    <h5 class="fw-bold mb-3">
+                        Account
+                    </h5>
+
+                    <a asp-controller="Account"
+                       asp-action="Logout"
+                       class="btn btn-outline-danger px-4">
+
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

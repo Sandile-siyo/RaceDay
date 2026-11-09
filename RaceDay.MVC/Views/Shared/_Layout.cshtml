@@ -1,49 +1,284 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RaceDay.MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RaceDay.MVC.styles.css" asp-append-version="true" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - RaceDay</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/RaceDay.MVC.styles.css"
+          asp-append-version="true" />
 </head>
-<body>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- ============================================= -->
+    <!-- RaceDay Navigation Bar -->
+    <!-- ============================================= -->
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RaceDay.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+
+            <div class="container">
+
+                <!-- RaceDay Logo / Home Link -->
+                <a class="navbar-brand fw-bold fs-4"
+                   asp-controller="Home"
+                   asp-action="Index">
+
+                    🏃 RaceDay
+
+                </a>
+
+
+                <!-- Mobile Navigation Button -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#raceDayNavbar"
+                        aria-controls="raceDayNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse"
+                     id="raceDayNavbar">
+
+
+                    <!-- Left Navigation -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Home -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                            <a class="nav-link text-white"
+                               asp-controller="Home"
+                               asp-action="Index">
+
+                                Home
+
+                            </a>
+
                         </li>
+
+
+                        <!-- Events -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                            <a class="nav-link text-white"
+                               asp-controller="Event"
+                               asp-action="Index">
+
+                                Events
+
+                            </a>
+
                         </li>
+
+
+                        <!-- Registrations -->
+                        <li class="nav-item">
+
+                            <a class="nav-link text-white"
+                               asp-controller="Registration"
+                               asp-action="Index">
+
+                                Registrations
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Results -->
+                        <li class="nav-item">
+
+                            <a class="nav-link text-white"
+                               asp-controller="Result"
+                               asp-action="Index">
+
+                                Results
+
+                            </a>
+
+                        </li>
+
                     </ul>
+
+
+                    <!-- Right Navigation -->
+                    <ul class="navbar-nav">
+
+                        <!-- Login -->
+                        <li class="nav-item">
+
+                            <a class="nav-link text-white"
+                               asp-controller="Account"
+                               asp-action="Login">
+
+                                Login
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Register -->
+                        <li class="nav-item ms-lg-2">
+
+                            <a class="btn btn-light text-primary fw-semibold px-3"
+                               asp-controller="Account"
+                               asp-action="Register">
+
+                                Register
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
                 </div>
+
             </div>
+
         </nav>
+
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+
+    <!-- ============================================= -->
+    <!-- Page Content -->
+    <!-- ============================================= -->
+
+    <div class="container flex-grow-1">
+
+        <main role="main"
+              class="py-4">
+
+            <!-- Success Message -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show"
+                     role="alert">
+
+                    <strong>Success!</strong>
+                    @TempData["SuccessMessage"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+            }
+
+
+            <!-- Warning Message -->
+            @if (TempData["WarningMessage"] != null)
+            {
+                <div class="alert alert-warning alert-dismissible fade show"
+                     role="alert">
+
+                    <strong>Notice:</strong>
+                    @TempData["WarningMessage"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+            }
+
+
+            <!-- Error Message -->
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show"
+                     role="alert">
+
+                    <strong>Error:</strong>
+                    @TempData["ErrorMessage"]
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+            }
+
+
             @RenderBody()
+
         </main>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - RaceDay.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+    <!-- ============================================= -->
+    <!-- Footer -->
+    <!-- ============================================= -->
+
+    <footer class="bg-light border-top py-4 mt-auto">
+
+        <div class="container text-center">
+
+            <div class="fw-bold text-primary mb-1">
+                🏃 RaceDay
+            </div>
+
+            <div class="text-muted small">
+                Race Event Management System
+            </div>
+
+            <div class="text-muted small mt-1">
+                &copy; 2026 RaceDay
+            </div>
+
         </div>
+
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+
+    <!-- ============================================= -->
+    <!-- Scripts -->
+    <!-- ============================================= -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js">
+    </script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
+
+    @await RenderSectionAsync(
+    "Scripts",
+        required: false)
+
 </body>
+
 </html>
