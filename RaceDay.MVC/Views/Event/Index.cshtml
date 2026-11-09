@@ -1,0 +1,82 @@
+﻿@model List<RaceDay.MVC.Models.Event>
+
+@{
+    ViewData["Title"] = "Event Management";
+}
+
+<!-- Event Management Heading -->
+<h1>Event Management</h1>
+
+<!-- Page Description -->
+<p>
+    This page displays all race events retrieved from the API.
+</p>
+
+<!-- Navigate to Create Event Page -->
+<a asp-controller="Event"
+   asp-action="Create"
+   class="btn btn-primary">
+    Create New Event
+</a>
+
+<hr />
+
+<!-- Event Table -->
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Distance</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <!-- Check if events exist -->
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var raceEvent in Model)
+            {
+                <tr>
+                    <td>@raceEvent.EventName</td>
+                    <td>@raceEvent.Location</td>
+                    <td>@raceEvent.EventDate.ToShortDateString()</td>
+                    <td>@raceEvent.Distance km</td>
+
+                    <td>
+                        <!-- Edit Event Button -->
+                        <a asp-controller="Event"
+                           asp-action="Edit"
+                           asp-route-id="@raceEvent.EventId"
+                           class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+
+                        <!-- Delete Event Button -->
+                        <a asp-controller="Event"
+                           asp-action="Delete"
+                           asp-route-id="@raceEvent.EventId"
+                           class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">
+                    No events found.
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+

@@ -1,0 +1,56 @@
+﻿@model List<RaceDay.MVC.Models.Category>
+
+@{
+    ViewData["Title"] = "Category Management";
+}
+
+<!-- Category Management Heading -->
+<h1>Category Management</h1>
+
+<!-- Description -->
+<p>
+    This page displays race categories retrieved from the API.
+</p>
+
+<!-- Create Category Button -->
+<a href="#"
+   class="btn btn-primary">
+    Create New Category
+</a>
+
+<hr />
+
+<!-- Category Table -->
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Distance</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.CategoryName</td>
+                    <td>@category.Distance km</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">
+                    No categories found.
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

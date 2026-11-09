@@ -1,0 +1,33 @@
+﻿@model RaceDay.MVC.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- Login page heading -->
+<h2>User Login</h2>
+
+<!-- Login form -->
+<form method="post">
+
+    <!-- Email input box -->
+    <div class="mb-3">
+        <label>Email Address</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <!-- Password input box -->
+    <div class="mb-3">
+        <label>Password</label>
+        <input asp-for="Password"
+               type="password"
+               class="form-control" />
+    </div>
+
+    <!-- Login button -->
+    <button type="submit"
+            class="btn btn-primary">
+        Login
+    </button>
+
+</form>

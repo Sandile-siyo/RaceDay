@@ -1,0 +1,56 @@
+﻿@model RaceDay.MVC.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Registration Page Heading -->
+<h2>User Registration</h2>
+
+<!-- Registration Form -->
+<form method="post">
+
+    <!-- First Name Input -->
+    <div class="mb-3">
+        <label>First Name</label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+
+    <!-- Last Name Input -->
+    <div class="mb-3">
+        <label>Last Name</label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+
+    <!-- Email Input -->
+    <div class="mb-3">
+        <label>Email Address</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <!-- Password Input -->
+    <div class="mb-3">
+        <label>Password</label>
+        <input asp-for="Password"
+               type="password"
+               class="form-control" />
+    </div>
+
+    <!-- User Role Selection -->
+    <div class="mb-3">
+        <label>User Role</label>
+
+        <select asp-for="Role" class="form-control">
+            <option value="">Select Role</option>
+            <option value="Organiser">Organiser</option>
+            <option value="Participant">Participant</option>
+        </select>
+    </div>
+
+    <!-- Registration Button -->
+    <button type="submit"
+            class="btn btn-success">
+        Register
+    </button>
+
+</form>

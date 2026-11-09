@@ -1,0 +1,65 @@
+﻿@model RaceDay.MVC.ViewModels.EditEventViewModel
+
+@{
+    ViewData["Title"] = "Edit Event";
+}
+
+<!-- Edit Event Heading -->
+<h1>Edit Event</h1>
+
+<!-- Edit Event Form -->
+<form method="post">
+
+    <!-- Hidden Event Id -->
+    <input asp-for="EventId" type="hidden" />
+
+    <!-- Event Name -->
+    <div class="mb-3">
+        <label>Event Name</label>
+        <input asp-for="EventName"
+               class="form-control" />
+    </div>
+
+    <!-- Event Description -->
+    <div class="mb-3">
+        <label>Event Description</label>
+        <input asp-for="EventDescription"
+               class="form-control" />
+    </div>
+
+    <!-- Event Date -->
+    <div class="mb-3">
+        <label>Event Date</label>
+        <input asp-for="EventDate"
+               type="date"
+               class="form-control" />
+    </div>
+
+    <!-- Location -->
+    <div class="mb-3">
+        <label>Location</label>
+        <input asp-for="Location"
+               class="form-control" />
+    </div>
+
+    <!-- Distance -->
+    <div class="mb-3">
+        <label>Distance (KM)</label>
+        <input asp-for="Distance"
+               class="form-control" />
+    </div>
+
+    <!-- Event Type -->
+    <div class="mb-3">
+        <label>Event Type</label>
+        <input asp-for="EventType"
+               class="form-control" />
+    </div>
+
+    <!-- Save Button -->
+    <button type="submit"
+            class="btn btn-success">
+        Update Event
+    </button>
+
+</form>

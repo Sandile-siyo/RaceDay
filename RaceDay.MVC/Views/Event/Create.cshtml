@@ -1,0 +1,59 @@
+﻿@model RaceDay.MVC.ViewModels.CreateEventViewModel
+
+@{
+    ViewData["Title"] = "Create Event";
+}
+
+<!-- Create Event Page Heading -->
+<h1>Create New Event</h1>
+
+<!-- Event Creation Form -->
+<form method="post">
+
+    <!-- Event Name -->
+    <div class="mb-3">
+        <label>Event Name</label>
+        <input asp-for="EventName" class="form-control" />
+    </div>
+
+    <!-- Event Description -->
+    <div class="mb-3">
+        <label>Event Description</label>
+        <input asp-for="EventDescription" class="form-control" />
+    </div>
+
+    <!-- Event Date -->
+    <div class="mb-3">
+        <label>Event Date</label>
+        <input asp-for="EventDate"
+               type="date"
+               class="form-control" />
+    </div>
+
+    <!-- Event Location -->
+    <div class="mb-3">
+        <label>Location</label>
+        <input asp-for="Location" class="form-control" />
+    </div>
+
+    <!-- Event Distance -->
+    <div class="mb-3">
+        <label>Distance (KM)</label>
+        <input asp-for="Distance"
+               class="form-control" />
+    </div>
+
+    <!-- Event Type -->
+    <div class="mb-3">
+        <label>Event Type</label>
+        <input asp-for="EventType"
+               class="form-control" />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit"
+            class="btn btn-success">
+        Save Event
+    </button>
+
+</form>
